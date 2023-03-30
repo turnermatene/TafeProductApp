@@ -20,6 +20,7 @@ namespace ProductApps
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const decimal GST = 1.1m;
         Product cProduct;
 
         public MainWindow()
@@ -36,6 +37,7 @@ namespace ProductApps
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25);
                 totalChargeTextBox_Copy.Text = Convert.ToString(cProduct.TotalPayment + 30);
+                totalChargeTextBox_Copy1.Text = Convert.ToString((cProduct.TotalPayment + 30) * GST);
             }
             catch (FormatException)
             {
